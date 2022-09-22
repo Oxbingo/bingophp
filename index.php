@@ -14,7 +14,7 @@ $msg=$_POST["msg"];
 $headers = "From: $from";
 
 mail($to,$subject,$msg,$headers);
-echo "Email successfully sent.";
+echo "Email successfully sent to $to .";
 }
 ?>
 
