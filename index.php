@@ -1,43 +1,31 @@
 <html>
-  <head>
-    <title>PHP Test</title>
-  </head>
-  <body>
-    
-<?php
-if(isset($_POST["SubmitBtn"])){
-
-$to = "consult.efic@gmail.com";
-$subject = "Contact mail";
-$from=$_POST["email"];
-$msg=$_POST["msg"];
-$headers = "From: $from";
-
-mail($to,$subject,$msg,$headers);
-echo "Email successfully sent to $to .";
-}
-?>
-
-<form id="emailForm" name="emailForm" method="post" action="" >
-<table width="100%" border="0" align="center" cellpadding="4" cellspacing="1">
-<tr>
-  <td colspan="2"><strong>Online Contact Form</strong></td>
-</tr>
-<tr>
-  <td>E-mail :</td>
-  <td><input name="email" type="text" id="email"></td>
-</tr>
-<tr>
-  <td>Message :</td>
-  <td>
-  <textarea name="msg" cols="45" rows="5" id="msg"></textarea>
-  </td>
-</tr>
-<tr>
-  <td>&nbsp;</td>
-  <td><input name="SubmitBtn" type="submit" id="SubmitBtn" value="Submit"></td>
-</tr>
-</table>
-</form>
-  </body>
+   
+   <head>
+      <title>Sending HTML email using PHP</title>
+   </head>
+   
+   <body>
+      
+      <?php
+         $to = "consult.efic@gmail.com";
+         $subject = "This is subject";
+         
+         $message = "<b>This is HTML message.</b>";
+         $message .= "<h1>This is headline.</h1>";
+         
+         $header = "From:mugenfinance.com \r\n";
+         $header .= "Cc:afgh@somedomain.com \r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= "Content-type: text/html\r\n";
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+         if( $retval == true ) {
+            echo "Message sent successfully...";
+         }else {
+            echo "Message could not be sent...";
+         }
+      ?>
+      
+   </body>
 </html>
