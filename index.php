@@ -7,13 +7,13 @@
    <body>
       
       <?php
-         $to = "consult.efic@gmail.com";
+         $to = "myemail";
          $subject = "This is subject";
          
          $message = "<b>This is HTML message.</b>";
          $message .= "<h1>This is headline.</h1>";
          
-         $header = "From:bingo@mugenfinance.com \r\n";
+         $header = "From:youremail \r\n";
          $header .= "Cc:bingo@mugenfinance.com \r\n";
          $header .= "MIME-Version: 1.0\r\n";
          $header .= "Content-type: text/html\r\n";
